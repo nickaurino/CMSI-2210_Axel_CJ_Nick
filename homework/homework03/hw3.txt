@@ -1,0 +1,40 @@
+Homework 3 2210
+
+C - Level:
+1. 1111 1010 1100 0011
+2. 64195
+3. -1341
+4. 0000000001100100
+5. 100
+6. 100
+7. 1000 0000 0000 0000
+8. 32768
+9. -32768
+10. 1F40
+11. 1F40
+12. FFF5
+13. 8033
+14. BD
+15. 48385
+16. -17151
+17. -524288
+18. +524287
+19. 850D
+20. 7FFD
+21. Y
+22. N
+
+
+B - Level
+See Picture
+
+
+A - Level
+1. 0x7f7fffff
+2. 0xff7fffff
+3. 0x80000001
+4. 0x00000001
+5. 0xff800000
+6. 0x00000000 since the exponent is smaller than the smallest possible value (-138 < -127)
+7. 0x00000000 since the exponent is smaller than the smallest possible value (-143 < -127)
+8. -3.390625
