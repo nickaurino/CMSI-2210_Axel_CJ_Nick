@@ -26,7 +26,23 @@ C - Level:
 
 
 B - Level
-See Picture
+1. 5
+2. 585B
+3. Y
+4. Y
+5. 19EF9
+6. 9EF9
+7. Y
+8. Y
+9. 0x4FF1
+10. DDCE
+11. 0xC000
+12. 0x000CDG46
+13. 0xC2840000
+14. 0xCB800000
+15. 240
+16. -7.96875
+
 
 
 A - Level
