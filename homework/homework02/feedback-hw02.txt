@@ -1,0 +1,51 @@
+
+
+Evaluation Criteria ~ homework02
+CMSI 2210 Section 03 Fall 2023
+=================================
+
+BOOK PROBLEMS
+   Question 01    1/1 pt.
+   Question 02    1/1 pt.
+   Question 03  0.5/1 pt.
+   Question 04    1/1 pt.
+   Question 05    1/1 pt.
+   Question 06    1/1 pt.
+   Question 07    1/1 pt.
+   Question 08    1/1 pt.
+   Question 09    1/1 pt.
+   Question 10    0/1 pt.
+   Question 11    1/1 pt.
+   Question 12    1/1 pt.
+   Question 13    1/1 pt.
+   Question 14    1/1 pt.
+   Question 15    1/1 pt.
+   Question 16  0.5/1 pt.
+   Question 17    1/1 pt.
+   Question 18    1/1 pt.
+   Question 19    1/1 pt.
+   Question 20    1/1 pt.
+
+Total possible points 20
+
+========================================================
+
+TOTAL EARNED POINTS:
+   you earned 18/20 which is 90.0% which is an A-minus
+
+========================================================
+SPECIFIC COMMENTS/FEEDBACK:
+
+On question 3, you're close.  Compiled languages are translated in their
+entirety into machine language that the CPU can use.  Interpreted languages
+use a separate application to translate the program instructions line-by-line
+for execution by the CPU.
+
+On question 10, the function "atof()" converts a text string to a FLOAT, not
+an integer value.
+
+On question 16, what you've stated is true, but doesn't answer the question.
+The question is, "is it MACHINE LANGUAGE", not "WHAT DOES THE CODE DO"....
+Also, they are not 'buses' they are 'registers'.
+
+Otherwise, nice work!  Keep it up!
