@@ -54,3 +54,19 @@ A - Level
 6. 0x00000000 since the exponent is smaller than the smallest possible value (-138 < -127) -- Wrong
 7. 0x00000000 since the exponent is smaller than the smallest possible value (-143 < -127) -- Wrong
 8. -3.390625
+
+
+
+FIXED QUESTIONS
+C20) 
+C21)
+C22)
+
+B1)
+B2)
+B4)
+B13)
+
+A5)
+A6)
+A7)
