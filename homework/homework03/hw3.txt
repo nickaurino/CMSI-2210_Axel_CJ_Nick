@@ -20,16 +20,16 @@ C - Level:
 17. -524288
 18. +524287
 19. 850D
-20. 7FFD
-21. Y
-22. N
+20. 7FFD -- Wrong
+21. Y -- Wrong
+22. N -- Wrong
 
 
 B - Level
-1. 5
-2. 585B
+1. 5 -- Wrong
+2. 585B -- Wrong
 3. Y
-4. Y
+4. Y -- Wrong
 5. 19EF9
 6. 9EF9
 7. Y
@@ -38,7 +38,7 @@ B - Level
 10. DDCE
 11. 0xC000
 12. 0x000CDG46
-13. 0xC2840000
+13. 0xC2840000 -- Wrong
 14. 0xCB800000
 15. 240
 16. -7.96875
@@ -50,7 +50,7 @@ A - Level
 2. 0xff7fffff
 3. 0x80000001
 4. 0x00000001
-5. 0xff800000
-6. 0x00000000 since the exponent is smaller than the smallest possible value (-138 < -127)
-7. 0x00000000 since the exponent is smaller than the smallest possible value (-143 < -127)
+5. 0xff800000 -- Wrong
+6. 0x00000000 since the exponent is smaller than the smallest possible value (-138 < -127) -- Wrong
+7. 0x00000000 since the exponent is smaller than the smallest possible value (-143 < -127) -- Wrong
 8. -3.390625
