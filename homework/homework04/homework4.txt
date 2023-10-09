@@ -1,0 +1,62 @@
+ 1)
+
+ A  B  C | X  Y
+ ---------+------
+  0  0  0 | 0  1
+  0  0  1 | 0  1
+  0  1  0 | 0  1
+  0  1  1 | 1  1
+  1  0  0 | 1  0
+  1  0  1 | 1  1
+  1  1  0 | 1  0
+  1  1  1 | 1  1
+
+1A)
+X =  A or C
+Y = Not A or C
+
+1B)
+
+2)
+
+3)
+- 3A) AND 0xAAAAAAAA
+- 3B) 
+
+4)
+        JMP         top
+value:  0x00
+top:    LOAD        value
+        WRITE       0x08
+        ADD         0x01
+        STORE       value
+        SUB         0x100
+        JLZ         top
+end:    JMP         end
+
+5)
+Write out all numbers from 0-255 to port 0x8 (WRITE 0x08).
+
+C0000002            JMP         top
+00000000    value:  0x00
+00000001    top:    LOAD        value
+30000008            WRITE       0x08
+40000001            ADD         0x01
+10000001            STORE       value
+50000001            SUB         0x100
+E0000002            JLZ         top
+C0000008    end:    JMP         end
+
+
+6) 
+        JMP         start
+value1: 0x00
+value2: 0x00
+start:  LOAD        value1
+        READ        0x100
+        STORE       value1
+        LOAD        value2
+        READ        0x100
+        STORE       value2
+top:    
+end:    JMP         end
