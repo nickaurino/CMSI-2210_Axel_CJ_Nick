@@ -58,5 +58,7 @@ start:  LOAD        value1
         LOAD        value2
         READ        0x100
         STORE       value2
-top:    
+        LOAD        value1
+        DIV         value2
+        WRITE       0x200
 end:    JMP         end
