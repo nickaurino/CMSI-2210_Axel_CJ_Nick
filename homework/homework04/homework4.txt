@@ -77,5 +77,5 @@ end:    JMP         end
 8)
         JMP         start
 start:  JLZ         end
-        READ        0x837BBE1
+        JMP        0x837BBE1
 end:    JMP         end
