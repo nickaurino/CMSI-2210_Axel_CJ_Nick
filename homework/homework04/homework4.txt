@@ -22,9 +22,13 @@ Y = A NAND NOT C
 (SEE UPLOADED IMAGE)
 
 3)
-- 3A) AND 0xAAAAAAAA
-- 3B) 
-- 3C) 
+- 3A) AND R0, R0, 0xAAAAAAAA
+- 3B) OR R0, R0, 0x7
+- 3C) AND R0, R0, 0x7
+- 3D) NOT R0, R0
+- 3E) XOR R0, R0, 0xC0000000
+- 3F) AND R0, R0, 0xFFFFFFF8
+
 
 4)
         JMP         top
