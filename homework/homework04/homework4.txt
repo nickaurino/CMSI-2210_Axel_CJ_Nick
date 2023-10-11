@@ -1,5 +1,4 @@
  1)
-
   A  B  C | X  Y
   --------+------
   0  0  0 | 0  1
@@ -16,6 +15,8 @@ X =  A OR C
 Y = NOT A OR C
 
 1B)
+X = NOT A NAND NOT C
+Y = A NAND NOT C
 
 2)
 
@@ -79,3 +80,10 @@ end:    JMP         end
 start:  JLZ         end
         JMP        0x837BBE1
 end:    JMP         end
+
+9)
+- 9A) The user would notice that the values of the data in r8 and r9 are swapped, meaning that the value originally stored in r8 is now stored in r9, and vice versa. 
+- 9B) The first XOR makes a kind of value that changes depending on the values of r8 and r9, which is stored in r8. The second xor cancels out the data stored in r8 that overlaps with r9, meaning r9 is now equal to r8's original value. Finally, when we compare r8 (which is the XOR value) and r9 (which is now equal to what was originally r8), the r8's in the XOR cancel out, making the r8 final value equal to r9. 
+       1.    xor r8, r9 => r8n = (r8o XOR r9o)
+       2.    xor r9, r8 => r9n = r8o
+       3.    xor r8, r9 => r8n = r9o
