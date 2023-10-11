@@ -23,7 +23,7 @@ Y = A NAND NOT C
 
 3)
 - 3A) AND 0xAAAAAAAA
-- 3B) OR 0x00000007
+- 3B) 
 - 3C) 
 
 4)
