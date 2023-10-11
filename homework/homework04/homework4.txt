@@ -1,7 +1,7 @@
  1)
 
- A  B  C | X  Y
- ---------+------
+  A  B  C | X  Y
+  --------+------
   0  0  0 | 0  1
   0  0  1 | 0  1
   0  1  0 | 0  1
@@ -12,8 +12,8 @@
   1  1  1 | 1  1
 
 1A)
-X =  A or C
-Y = Not A or C
+X =  A OR C
+Y = NOT A OR C
 
 1B)
 
@@ -21,7 +21,8 @@ Y = Not A or C
 
 3)
 - 3A) AND 0xAAAAAAAA
-- 3B) 
+- 3B) OR 0x00000007
+- 3C) 
 
 4)
         JMP         top
@@ -35,8 +36,6 @@ top:    LOAD        value
 end:    JMP         end
 
 5)
-Write out all numbers from 0-255 to port 0x8 (WRITE 0x08).
-
 C0000002            JMP         top
 00000000    value:  0x00
 00000001    top:    LOAD        value
@@ -61,4 +60,22 @@ start:  LOAD        value1
         LOAD        value1
         DIV         value2
         WRITE       0x200
+end:    JMP         end
+
+7)
+        JMP         start
+value1: 0x00
+value2: 0x00
+start:  STORE       value1
+        READ        0x30AA
+        STORE       value2
+        LOAD        value1
+        WRITE       0x30AA
+        LOAD        value2
+end:    JMP         end
+
+8)
+        JMP         start
+start:  JLZ         end
+        READ        0x837BBE1
 end:    JMP         end
