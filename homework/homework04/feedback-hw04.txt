@@ -1,0 +1,76 @@
+
+
+Evaluation Criteria ~ homework04
+CMSI 2210 Section 03 Fall 2023
+=================================
+
+LOGIC DESIGN
+   Logic Question 1a         10/10 pts.
+   Logic Question 1b          3/3  pts.
+   Logic Question 2          10/10 pts.
+
+REGISTER OPERATIONS
+   Register clear even        2/2 pts.
+   Register set last 3        2/2 pts.
+   Reg./8 remainder           2/2 pts.
+   Reg. set to -1             2/2 pts.
+   Reg. invert 2 MSBs         2/2 pts.
+   Register computation       2/2 pts.
+
+STANLEY/PENGUIN ASSEMBLY
+   Q4 - program 1a           11/11 pts.
+   Q5 - program 1b           11/11 pts.
+   Q6 - GCD prog.             5/11 pts.
+   Q7 - swap frag             3/5  pts.
+   Q8 - jmp to addr           3/5  pts.
+
+REGISTER INVESTIGATION
+   Q9a - high level expl.     5/5  pts.
+   Q9b - Why?                 5/5  pts.
+
+
+Total possible points        90 points
+
+========================================================
+
+TOTAL EARNED POINTS:
+   you earned 78.0/ 90.0 which is 86.67% which is a B
+
+========================================================
+SPECIFIC COMMENTS/FEEDBACK:
+
+On problem 1 part B, you aren't allowed to use NOT gates, only NAND gates.
+You can make a NOT gate from a NAND gate by feeding one signal into both
+of the NAND gate inputs.
+
+On problem 2, good thinking using XOR gates!
+
+On problem 6, the LOAD instructions which are before the READ instructions
+aren't needed, since the READ will overwrite what's in the accumulator.  The
+DIV instruction won't give you the remainder, only the quotient.  You need
+to use the MOD intruction instead.  I don't think you understand the GCD
+algorithm correctly, since you need to have a loop, and you need to do the
+MOD operation each time.  You then need to check the value of 'value2' each
+time and if it is zero you output 'value1' to the port.
+
+On problem 7, you seem to have the LOAD/STORE and READ/WRITE operations mixed
+up.  The former is for accumulator/memory transfers, and the latter is for
+accumulator/port transfers.  Also, the problem says "code fragment", not an
+entire program.
+
+On problem 8, you need two conditions, one for greater than zero and one for
+equal to zero.
+
+Otherwise, good job!
+
+========================================================
+SEMESTER SCORE SO FAR:
+
+   homework01 ~ 100.00% of  5 points =  5.00 points
+   homework02 ~  90.00% of  5 points =  4.50 points
+   homework03 ~ 100.00% of  5 points =  5.00 points
+   homework04 ~  86.67% of  5 points =  4.33 points
+                                total: 18.83 out of 20.0 = 94.17%
+                                which is a solid A
+
+Keep up the good work!
