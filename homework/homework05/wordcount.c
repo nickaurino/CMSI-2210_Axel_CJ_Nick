@@ -21,6 +21,10 @@ int countWords(FILE *f){
 
 int main(int argc, char * args[]) {
     FILE *f = fopen(args[1],"r");
-    int count = countWords(f);
-    printf("\nTHE NUMBER OF WORDS IN THE FILE WAS %i\n",count+1);
+    if(*f != NULL) {
+        int count = countWords(f);
+        printf("\nTHE NUMBER OF WORDS IN THE FILE WAS %i\n",count+1);
+    } else {
+       printf("INPUT NEW TEXT FILE");
+    }
 }
