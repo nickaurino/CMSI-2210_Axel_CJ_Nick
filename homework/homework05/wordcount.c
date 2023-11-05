@@ -21,7 +21,8 @@ int countWords(FILE *f){
 
 int main(int argc, char * args[]) {
     FILE *f = fopen(args[1],"r");
-    if(*f != NULL) {
+//    if(*f != NULL) {   This causes a compile error with a type mismatch
+    if(f != NULL) {
         int count = countWords(f);
         printf("\nTHE NUMBER OF WORDS IN THE FILE WAS %i\n",count+1);
     } else {
