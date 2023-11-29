@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <stdint.h>
-#include <arpa/inet.h>  
+#include <winsock.h>
+#include "NBOC.h"
 
-uint32_t toNetworkByteOrder(uint32_t num) {
-    return htonl(num);
+long int makeNBOC(long int num) {
+    if (num != htonl(num)) {
+        num = htonl(num);
+    } return num;
 }

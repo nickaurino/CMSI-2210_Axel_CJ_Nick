@@ -6,13 +6,11 @@ int main() {
         char bytes[sizeof(int)];
     } testUnion;
 
-    testUnion.num = 0x1;  
+    testUnion.num = 0x1;
 
     if (testUnion.bytes[0] == 1) {
         printf("This system is Little-Endian.\n");
     } else {
         printf("This system is Big-Endian.\n");
-    }
-
-    return 0;
+    } return 0;
 }
