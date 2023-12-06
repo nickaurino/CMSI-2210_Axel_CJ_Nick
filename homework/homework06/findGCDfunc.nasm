@@ -1,4 +1,4 @@
-#To assemble: nasm-f win32 findGCDfunc.nasm -o findGCDfunc.obj
+;To assemble: nasm-f win32 findGCDfunc.nasm -o findGCDfunc.obj
 section .data
     format: db "%d", 0         ; formatted bytes as double
     format2: db 10, 'GCD: %d', 10, 0  ; formatted bytes as string with %d input
