@@ -1,3 +1,5 @@
+#To compile: nasm-f win32 findGCD.nasm
+
 global  _main
 extern _scanf, _printf
 
