@@ -1,4 +1,4 @@
-#To compile: nasm-f win32 findGCD.nasm
+#To compile: nasm-f win32 findGCD.nasm -o findGCD.obj
 
 global  _main
 extern _scanf, _printf
