@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+//gcc whichEndIsUp.c -o whichEndIsUp.exe
 int main() {
     union {
         int num;
