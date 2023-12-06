@@ -1,4 +1,4 @@
-#To assemble: nasm -f macho64 paritygen.nasm -o paritygen.obj
+;To assemble: nasm -f macho64 paritygen.nasm -o paritygen.obj
 
 section .data
     format:   db        "%d", 0   ; format specifier for printf
