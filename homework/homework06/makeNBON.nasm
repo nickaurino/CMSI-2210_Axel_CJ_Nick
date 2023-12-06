@@ -1,4 +1,4 @@
-#To assemble: nasm -f win32 makeNBON.nasm -o makeNBON.obj
+;To assemble: nasm -f win32 makeNBON.nasm -o makeNBON.obj
 
 global  _main
 extern _test
