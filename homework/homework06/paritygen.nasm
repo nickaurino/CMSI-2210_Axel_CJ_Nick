@@ -1,50 +1,53 @@
-;To assemble: nasm -f macho64 paritygen.nasm -o paritygen.obj
+nasm -fmacho64 modified_comments_paritygen.nasm
+gcc -m32 modified_comments_paritygen.o -o modified_comments_paritygen.exe
 
 section .data
-    format:   db        "%d", 0   ; format specifier for printf
+    result_msg db 'Parity bit for the given byte (odd parity): ', 0
 
 section .text
-    global paritygen
+    global _start
 
-paritygen:
-    mov     rdx, rdi            ; rdx holds the address of the byte of data
-    mov     r8, 8               ; length of the byte
-    mov     r9, 0               ; count of '1's in the byte so far
+_start:
+    ; Input: rdi = byte of data
 
-line:
-    movzx   rcx, byte [rdx]    ; load the current bit (0 or 1) into rcx
-    add     r9, rcx            ; add the bit value to the count
-    inc     rdx                ; advance pointer to the next bit
+    ; Count the number of set bits
+    mov rcx, 8                ; Initialize the bit counter
+    mov rax, rdi              ; Copy the byte to rax
+    xor rdi, rdi              ; Clear rdi to use it as the bit count
 
-    ; Continue looping until the end of the byte
-    cmp     rdx, [rdi + r8]    ; Compare the current address with the end address of the byte
-    jl      line                ; if not at the end, continue looping
+parity_calculation_loop:
+    test rax, 1               ; Check the least significant bit
+    jnz set_bit_found         ; Jump if it's set
+    inc rdi                   ; Increment count if bit is set
 
-    ; Convert the count to odd parity
-    test    r9, 1              ; test if count is odd
-    jz      evenParity         ; if not odd, jump to evenParity
-    jmp     oddParity          ; jump to oddParity
+set_bit_found:
+    shr rax, 1                ; Shift right to check the next bit
+    loop parity_calculation_loop ; Repeat until all bits are checked
 
-evenParity:
-    ; Even parity, print 1
-    mov     rdi, 1              ; file handle 1 is stdout
-    mov     rsi, 1              ; value to print
-    mov     rax, 0              ; clear RAX (necessary for printf)
-    jmp     printAndExit
+    ; Determine the proper value for the parity bit (odd parity)
+    test rdi, 1               ; Check if the bit count is odd
+    jnz odd_parity_found      ; Jump if it's odd
+    mov rsi, '1'              ; Set parity bit to 1
+    jmp print_result
 
-oddParity:
-    ; Odd parity, print 0
-    mov     rdi, 1              ; file handle 1 is stdout
-    mov     rsi, 0              ; value to print
-    mov     rax, 0              ; clear RAX (necessary for printf)
+odd_parity_found:
+    mov rsi, '0'              ; Set parity bit to 0
 
-printAndExit:
-    ; Set up parameters for write syscall
-    mov     rax, 0x02000004     ; system call for write
-    mov     rdx, 1              ; number of bytes (just the parity bit)
-    syscall                     ; invoke operating system to do the write
+print_result:
+    ; Print the result
+    mov rax, 0x1              ; System call number for sys_write
+    mov rdi, 0x1              ; File descriptor 1 is stdout
+    mov rdx, 45               ; Length of the message
+    lea rsi, [result_msg]    ; Load the message address
+    syscall
 
-    ; Exit
-    mov     rax, 0x02000001     ; system call for exit
-    xor     rdi, rdi            ; exit code 0
-    syscall                     ; invoke operating system to exit
+    mov rax, 0x1              ; System call number for sys_write
+    mov rdi, 0x1              ; File descriptor 1 is stdout
+    mov rdx, 0x1              ; Length of the parity bit
+    lea rsi, [rsi]            ; Load the parity bit address
+    syscall
+
+    ; Exit the program
+    mov rax, 0x60             ; System call number for sys_exit
+    xor rdi, rdi              ; Exit code 0
+    syscall
