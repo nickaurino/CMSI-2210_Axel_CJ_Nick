@@ -1,0 +1,97 @@
+
+
+Evaluation Criteria ~ homework06
+CMSI 2210 Section all Fall 2023
+=================================
+
+FINDGCD.NASM
+   nasm file assembles  [5 pts.]
+   nasm runs            [5 pts.]
+   output correct       [3 pts.]
+GCDFINDER
+   nasm file assembles  [5 pts.]
+   gcdFinder.c compiles [5 pts.]
+   link both files OK   [5 pts.]
+   nasm returns value   [5 pts.]
+   output correct       [3 pts.]
+PARITYGEN
+   nasm file assembles  [5 pts.]
+   nasm runs            [3 pts.]
+   output correct       [2 pts.]
+WHICHENDISUP
+   compiles no errors   [5 pts.]
+   runs no errors       [5 pts.]
+MAKENBOC.C
+   compiles no errors   [4 pts.]
+   uses previous func.  [5 pts.]
+   tester compiles      [5 pts.]
+   tester runs          [5 pts.]
+   output correct       [0 pts.]
+MAKENBO.NASM
+   nasm file assembles  [3 pts.]
+   link all files OK    [0 pts.]
+   calls "C" function   [5 pts.]
+   output correct       [0 pts.]
+
+Total possible points 100
+
+========================================================
+
+TOTAL EARNED POINTS:
+   you earned 83.00/100.00 which is 83% which is a B
+
+========================================================
+SPECIFIC COMMENTS/FEEDBACK:
+
+problem 1 works perfectly!  Nice work.
+
+problem 2 you have a linker error ~ the linker can't find the "calculateGCD"
+   function, since you didn't put the underscore character in front of the
+   name.  I fixed that for you, no charge.  Once I did that, it worked.  One
+   thing to keep in mind, there are many times for which you will want to
+   know not only that all tests passed, but that EACH test got the expected
+   value returned.  For those, using a "printf()" statement to output an
+   "expected .... actual ....." message are more useful than simply putting
+   out a "WORKED" MESSAGE.  :)
+
+problem 3 doesn't assemble on windows.  I get an error saying "impossible
+   combination of address sizes."  On mac, it assembles, but linking gives a
+   "_main" undefined symbol error.  I changed the code to make a "_main" for
+   you and now everything assembles and links.  However, it gets a seg fault
+   when I run it.
+
+problem 4 works perfectly!  Excellent.
+
+problem 5 doesn't compile because you are including a header file that does
+   not exist.  There is no file "NBOC.h" in your directory, and you should
+   never EVER include a ".c" file so that's not the fix.  I commented out
+   the offending line and now it compiles and links fine.  However, I get
+   no output when I run it.  This is because the "main()" in your program
+   file is empty.  You need to figure out how to call the function from the
+   main program and make sure there is a call to your function, which isn't
+   in there at this point.  Nice try, though.....
+
+problem 6, your byte data exceeds the bounds of the size you've specified as
+   'db'.  You can't put anything larger than 255 into a single byte!  I fixed
+   the code, but it costs you a bit.  Next, linking on mac has 7 errors, two
+   are 'instruction not supported' and five are because of 32-bit absolute
+   addresses in 64-bit mode.  Trying it on windows, it compiles and assembles
+   fine but gets five linker errors about the '_test' function.  So, this
+   doesn't run on either platform.
+
+========================================================
+SEMESTER HOMEWORK TOTALS:
+
+   homework01 ~ 100.00% of  5 points =  5.00 points
+   homework02 ~  90.00% of  5 points =  4.50 points
+   homework03 ~ 100.00% of  5 points =  5.00 points
+   homework04 ~  86.67% of  5 points =  4.33 points
+   homework05 ~  92.00% of 10 points =  9.20 points
+   homework06 ~  83.00% of 15 points = 12.45 points
+                       semester total: 40.48 out of 45.00 = 89.96%
+                             which is an A-minus
+
+Great work on this assignment, and you've done well for the entire semester!
+
+Now on to the final exam.....
+
